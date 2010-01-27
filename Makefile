@@ -24,7 +24,7 @@ upload: build
 install: build
 	sudo python setup.py install
 
-runserver:
+runserver: dependencies
 	python manage.py runserver
 
 clean:

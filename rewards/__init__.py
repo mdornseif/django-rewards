@@ -2,7 +2,7 @@
 
 """Copyright (c) 2010  Maximillian Dornseif. All rights reserved."""
 
-from rewards.models import Campaign, Inflow
+from rewards.models import Campaign, Inflow, Conversion, CONVERSION_STATUS_CHOICES
 from rewards.tools import get_ip
 
 
@@ -22,3 +22,15 @@ def regcon_by_request(request, value, reference='', text=''):
     if campaign_designator:
         regcon(campaign_designator, int(value), reference, text, ip_address=ip_address,
                user_agent=user_agent, referer=referer)
+
+def updatecon_by_reference(reference, state):
+    # TBD
+    conversions = Conversion.objects.filter(reference)
+    if not len(conversions):
+        return None
+    if state not in dict(CONVERSION_STATUS_CHOICES):
+        raise RuntimeError('invalid state %r' % state)
+    conversion = conversions[0]
+    conversion.state = state
+    conversion.save()
+    return conversion

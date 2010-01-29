@@ -14,6 +14,9 @@ from django.db import models
 from rewards.tools import get_ip
 
 
+CONVERSION_STATUS_CHOICES = (('created', 'created'), ('processed', 'processed'),
+                             ('finished', 'finished'), ('canceled', 'canceled'))
+
 class Campaign(models.Model):
     designator = models.CharField(max_length=28, null=True, blank=True, editable=False,
                                   unique=True, db_index=True)
@@ -62,6 +65,8 @@ class Conversion(models.Model):
     ip_address = models.IPAddressField()
     user_agent = models.CharField(max_length=255)
     referer = models.CharField(max_length=255)
+    status = models.CharField(max_length=32, choices=CONVERSION_STATUS_CHOICES,
+                              default=CONVERSION_STATUS_CHOICES[0][0])
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
 
 

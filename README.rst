@@ -93,3 +93,9 @@ this::
     return render_to_response(...)
 
 
+
+
+.. image:: https://d2weczhvl823v0.cloudfront.net/mdornseif/django-rewards/trend.png
+   :alt: Bitdeli badge
+   :target: https://bitdeli.com/free
+

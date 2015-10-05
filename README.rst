@@ -57,7 +57,7 @@ campain but you can also use campains to track other things, e.g.
 movements of visitors between your different Web properties or
 effectiveness of advertising.
 
-Tracking is done by appending ``?aff=<campagin id>`` to the URL. This
+Tracking is done by appending ``?aff=<campaign id>`` to the URL. This
 will fill ``request.session['campaign']`` of the current sessions with
 the campain id. It also will register the visit as an "inflow" in the
 Database.

@@ -1,3 +1,5 @@
+.. image:: http://unmaintained.tech/badge.svg
+
 django-rewards
 ==============
 

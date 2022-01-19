@@ -55,13 +55,13 @@ Finally create the needed database tables::
 This should have automatically created an campaign with the ID
 "dcTESTESTESTESTESTESTESTESTE". Campaigns are the categories in which
 you do tracking. Every affiliate is associated (one to one) with an
-campain but you can also use campains to track other things, e.g.
+campaign but you can also use campaigns to track other things, e.g.
 movements of visitors between your different Web properties or
 effectiveness of advertising.
 
 Tracking is done by appending ``?aff=<campagin id>`` to the URL. This
 will fill ``request.session['campaign']`` of the current sessions with
-the campain id. It also will register the visit as an "inflow" in the
+the campaign id. It also will register the visit as an "inflow" in the
 Database.
 
 To register "conversions" ("goals": sales, subscriptions, whatever) you
